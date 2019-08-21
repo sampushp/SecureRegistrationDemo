@@ -1,0 +1,12 @@
+<% if can? :index, User %>
+  <div>
+    <p><%= link_to('All Users', users_path) %></p> 
+  </div>
+<% end %>
+<div>
+  <h3>User</h3>
+  <p>First Name: <%= @user.first_name if @user.first_name %></p>
+  <p>Last Name: <%= @user.last_name if @user.last_name %></p>
+  <p>Role: <%= @user.role if @user.role %></p>
+  <p>Email: <%= @user.email if @user.email %></p>
+</div>

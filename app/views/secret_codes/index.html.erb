@@ -1,0 +1,29 @@
+<div>
+  <p><%= link_to('All Users', users_path) %></p> 
+</div>
+<div>
+  <div class="row">
+	  <%= form_for(@secret_code) do |f| %>
+	    <%= f.select(:code_count, code_create_options, selected: 10) %>
+	    <%= f.submit 'Add Secret Codes', :class => 'button-xs' %>
+	  <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <h3>Secret Codes</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <% @secret_codes.each do |secret_code| %>
+            <tr>
+              <%= render secret_code %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%= will_paginate @secret_codes, renderer: BootstrapPagination::Rails %>

@@ -1,0 +1,10 @@
+<div class="secretcodeform">
+  <%= form_for(@secret_code) do |f| %>
+    <h3>Create Secret Code</h3>
+    <div class="row">
+      <%= f.label :code %>
+      <%= f.text_field :code %>
+      <%= f.submit 'Add', :class => 'button right' %>
+    </div>
+  <% end %>
+</div>
